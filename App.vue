@@ -1,136 +1,42 @@
+<!-- 
+应用入口文件
+作用：监听"应用生命周期"、配置全局样式、配置全局的存储globalData 
+-->
+
 <script>
-	import {
-		mapMutations
-	} from 'vuex'
-	import {
-		version
-	} from './package.json'
-	import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update';
-
 	export default {
-		onLaunch: function() {
-			// #ifdef H5
-			console.log(
-				`%c hello uniapp %c v${version} `,
-				'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
-				'background:#007aff ;padding: 1px; border-radius: 0 3px 3px 0;  color: #fff; font-weight: bold;'
-			)
-			// #endif
-			// 线上示例使用
-			// console.log('%c uni-app官方团队诚邀优秀前端工程师加盟，一起打造更卓越的uni-app & uniCloud，欢迎投递简历到 hr2013@dcloud.io', 'color: red');
-			console.log('App Launch');
-			// #ifdef APP-PLUS
-			// App平台检测升级，服务端代码是通过uniCloud的云函数实现的，详情可参考：https://ext.dcloud.net.cn/plugin?id=4542
-			if (plus.runtime.appid !== 'HBuilder') { // 真机运行不需要检查更新，真机运行时appid固定为'HBuilder'，这是调试基座的appid
-				checkUpdate()
-			}
-
-			// 一键登录预登陆，可以显著提高登录速度
-			uni.preLogin({
-				provider: 'univerify',
-				success: (res) => {
-					// 成功
-					this.setUniverifyErrorMsg();
-					console.log("preLogin success: ", res);
-				},
-				fail: (res) => {
-					this.setUniverifyLogin(false);
-					this.setUniverifyErrorMsg(res.errMsg);
-					// 失败
-					console.log("preLogin fail res: ", res);
-				}
-			})
-			// #endif
-		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
-		},
 		globalData: {
-			test: ''
+			aa: '全局数据-aa',
 		},
-		methods: {
-			...mapMutations(['setUniverifyErrorMsg', 'setUniverifyLogin'])
-		}
+		// 初始化完成时触发（全局只触发一次），参数为应用启动参数
+		onLaunch(props) {
+			console.log('App-onLaunch: ', props);
+			console.log('应用启动参数: ', uni.getLaunchOptionsSync())
+		},
+		// 当 uni-app 启动，或从后台进入前台显示，参数为应用启动参数
+		onShow(props) {
+			console.log('App-onShow: ', props)
+		},
+		onHide() {
+			console.log('App-onHide: 从前台进入后台')
+		},
+		// 当 uni-app 报错时触发
+		onError() {
+			console.log('App-onError: 报错了')
+		},
+		// 页面不存在监听函数
+		onPageNotFound() {
+			console.log('App-onPageNotFound: 页面不存在')
+		},
+		// 监听-系统主题变化
+		onThemeChange() {},
+		// 最后一个页面按下Android back键，常用于自定义退出
+		onLastPageBackPress() {},
+		// 监听-应用退出
+		onExit() {},
 	}
 </script>
 
-<style lang="scss">
-	@import '@/uni_modules/uni-scss/index.scss';
-	/* #ifndef APP-PLUS-NVUE */
-	/* uni.css - 通用组件、模板样式库，可以当作一套ui库应用 */
-	@import './common/uni.css';
-	@import '@/static/customicons.css';
-	/* H5 兼容 pc 所需 */
-	/* #ifdef H5 */
-	@media screen and (min-width: 768px) {
-		body {
-			overflow-y: scroll;
-		}
-	}
-
-	/* 顶栏通栏样式 */
-	/* .uni-top-window {
-	    left: 0;
-	    right: 0;
-	} */
-
-	uni-page-body {
-		background-color: #F5F5F5 !important;
-		min-height: 100% !important;
-		height: auto !important;
-	}
-
-	.uni-top-window uni-tabbar .uni-tabbar {
-		background-color: #fff !important;
-	}
-
-	.uni-app--showleftwindow .hideOnPc {
-		display: none !important;
-	}
-
-	/* #endif */
-
-	/* 以下样式用于 hello uni-app 演示所需 */
-	page {
-		background-color: #efeff4;
-		height: 100%;
-		font-size: 28rpx;
-		/* line-height: 1.8; */
-	}
-
-	.fix-pc-padding {
-		padding: 0 50px;
-	}
-
-	.uni-header-logo {
-		padding: 30rpx;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin-top: 10rpx;
-	}
-
-	.uni-header-image {
-		width: 100px;
-		height: 100px;
-	}
-
-	.uni-hello-text {
-		color: #7A7E83;
-	}
-
-	.uni-hello-addfile {
-		text-align: center;
-		line-height: 300rpx;
-		background: #FFF;
-		padding: 50rpx;
-		margin-top: 10px;
-		font-size: 38rpx;
-		color: #808080;
-	}
-
-	/* #endif*/
+<style>
+	/*每个页面公共css */
 </style>
