@@ -1,10 +1,11 @@
 <template>
 	<view class="box">
 		<text>下拉刷新、上拉加载更多</text>
-		<view>
-			<view v-for="(item, index) in list" :key="index" class="item">
-				{{`${item.title} ${index}`}}
+		<view class="uni-padding-wrap uni-common-mt">
+			<view v-for="(item, index) in list" :key="index" class="box-item">
+				list-{{index}}
 			</view>
+			<view class="box-loadmore">{{loadMoreText}}</view>
 		</view>
 	</view>
 </template>
@@ -30,54 +31,60 @@
 		},
 	]
 	const list = ref(initList)
+	const loadMoreText = ref('加载中...')
 
+	// 初始化列表数据
+	const initData = () => {
+		setTimeout(() => {
+			let _list = [];
+			for (var i = 0; i < 20; i++) {
+				_list.push(i)
+			}
+			list.value = _list;
+			loadMoreText.value = "加载中..."
+			uni.stopPullDownRefresh();
+		}, 100);
+	}
+
+	onLoad(() => {
+		initData();
+	})
 	// 监听-用户下拉动作，下拉刷新
 	onPullDownRefresh(() => {
-		setTimeout(() => {
-			uni.stopPullDownRefresh();
-			console.log('下拉刷新');
-			list.value = initList;
-		}, 2000)
+		initData();
 	})
 	// 监听-页面滚动到底部的事件,加载下一页数据
 	onReachBottom(() => {
-		console.log('上拉加载更多');
-		let _list = [{
-				title: '追加的新数据'
-			},
-			{
-				title: '追加的新数据'
-			},
-			{
-				title: '追加的新数据'
-			},
-			{
-				title: '追加的新数据'
-			},
-			{
-				title: '追加的新数据'
-			},
-		]
-		if (list.value.length > 30) {
-			console.log('我们也是有底线的');
+		if (list.value.length > 50) {
+			loadMoreText.value = "没有更多数据了!"
 			return;
 		}
-		list.value = [...list.value, ..._list];
-	})
-	// 监听-页面滚动（可以实时取到滚动距离）
-	onPageScroll((e) => {
-		// console.log('onPageScroll: ', e); // {scrollTop: 66}
+		let _list = [];
+		for (var i = 0; i < 20; i++) {
+			_list.push(i)
+		}
+		setTimeout(() => {
+			list.value = [...list.value, ..._list];
+		}, 300);
 	})
 </script>
 
 <style scoped lang="less">
 	.box {
-		border: 5rpx solid #f00;
-		width: 750rpx;
-		box-sizing: border-box;
-
-		.item {
-			height: 300rpx;
+		border: 1px solid #000;
+		.box-item {
+			margin: 16rpx 0;
+			width:100%;
+			background-color: #f1f1f1;
+			height: 120rpx;
+			line-height: 120rpx;
+			text-align: center;
+			color: #555;
+			border-radius: 8rpx;
+		}
+		.box-loadmore{
+			height: 100rpx;
+			text-align: center;
 		}
 	}
 </style>

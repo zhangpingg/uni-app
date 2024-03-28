@@ -2,7 +2,7 @@
 	<view class="i">
 		<image class="i-logo" src="/static/logo.png"></image> <br>
 		<text @click="jumpGeneral('/pages/test/test')">测试</text> <br>
-		<text @click="jumpTab('/pages/scrollList/index')">无线滚动列表</text> <br>
+		<text @click="jumpGeneral('/pages/scrollList/index')">无线滚动列表</text> <br>
 		<text @click="jumpTab('/pages/tabBar/index')">tabBar Api</text> <br>
 		<text @click="jumpGeneral('/pages/implantH5/index')">小程序嵌入H5页面</text><br>
 		<text @click="jumpGeneral('/pages/dataApi/index')">调用接口</text><br>

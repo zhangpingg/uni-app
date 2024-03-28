@@ -97,12 +97,12 @@
 				"selectedIconPath": "./imgs/tabBar/01_2.png"
 				// "iconfont": '' // 配置字体图标，详见文档
 			},
-			{
-				"pagePath": "pages/scrollList/index",
-				"text": "列表",
-				"iconPath": "./imgs/tabBar/01_1.png",
-				"selectedIconPath": "./imgs/tabBar/01_2.png"
-			},
+			// {
+			// 	"pagePath": "pages/scrollList/index",
+			// 	"text": "列表",
+			// 	"iconPath": "./imgs/tabBar/01_1.png",
+			// 	"selectedIconPath": "./imgs/tabBar/01_2.png"
+			// },
 			{
 				"pagePath": "pages/tabBar/index",
 				"text": "tabBar"
