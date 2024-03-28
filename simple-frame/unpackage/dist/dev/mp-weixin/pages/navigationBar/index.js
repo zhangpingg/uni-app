@@ -1,0 +1,1 @@
+"use strict";const e=require("../../common/vendor.js"),a={__name:"index",setup(a){const i=()=>{e.index.setNavigationBarTitle({title:"标题-新名称"})};return(a,t)=>({a:e.o(i)})}},i=e._export_sfc(a,[["__file","D:/zhangxiaoshuai/private/uni-app/simple-frame/pages/navigationBar/index.vue"]]);wx.createPage(i);

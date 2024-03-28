@@ -1,0 +1,133 @@
+{
+	// 页面路由
+	"pages": [
+		{
+			"path": "pages/home/index",
+			// 设置每个页面的状态栏、导航条、标题、窗口背景色等（会覆盖 globalStyle 全局样式）
+			"style": {
+				"navigationBarTitleText": "首页", // 导航栏标题文本
+				"navigationBarTextStyle": "black", // 导航栏标题文字颜色
+				"navigationBarBackgroundColor": "#F8F8F8", // 导航栏背景颜色
+				"backgroundColor": "#F00", // 窗口的背景色（没起作用）
+				// "navigationStyle": "custom" // 原导航栏隐藏了，可以自定义
+				"enablePullDownRefresh": true	// 是否开启下拉刷新
+				// "backgroundTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/scrollList/index",
+			"style": {
+				"navigationBarTitleText": "列表",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/tabBar/index",
+			"style": {
+				"navigationBarTitleText": "tabBar API",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path" : "pages/pageLifeCycle/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "(页面)生命周期",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/test/test",
+			"style" : 
+			{
+				"navigationBarTitleText" : "测试",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/implantH5/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "小程序嵌入H5页面",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/dataApi/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "调用接口",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/navigationBar/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "导航条相关设置",
+				"enablePullDownRefresh" : false
+			}
+		}
+	],
+	// 全局：状态栏、导航条、标题、窗口背景色等
+	"globalStyle": {
+		"navigationBarTitleText": "全局-标题", // 导航栏标题文字内容
+		"navigationBarTextStyle": "black", // 导航栏标题文字颜色
+		"navigationBarBackgroundColor": "#F8F8F8", // 导航栏背景颜色
+		"backgroundColor": "#F00", // 窗口的背景色（没起作用）
+		// 引用小程序组件
+		"usingComponents": {
+			// "collapse-tree-item": "/components/collapse-tree-item"
+		},
+		"renderingMode": "seperated", // 仅微信小程序，webrtc 无法正常时尝试强制关闭同层渲染
+		"pageOrientation": "portrait", //横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape
+		"rpxCalcMaxDeviceWidth": 960,
+		"rpxCalcBaseDeviceWidth": 375,
+		"rpxCalcIncludeWidth": 750,
+		"onReachBottomDistance": 100 // 页面上拉触底事件触发时距页面底部距离
+	},
+	"uniIdRouter": {},
+	// 底部菜单（API：https://uniapp.dcloud.net.cn/api/ui/tabbar.html#hidetabbar）
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/home/index",
+				"text": "首页",
+				"iconPath": "./imgs/tabBar/01_1.png",	
+				"selectedIconPath": "./imgs/tabBar/01_2.png"
+				// "iconfont": '' // 配置字体图标，详见文档
+			},
+			{
+				"pagePath": "pages/scrollList/index",
+				"text": "列表",
+				"iconPath": "./imgs/tabBar/01_1.png",
+				"selectedIconPath": "./imgs/tabBar/01_2.png"
+			},
+			{
+				"pagePath": "pages/tabBar/index",
+				"text": "tabBar"
+			},
+			{
+				"pagePath": "pages/pageLifeCycle/index",
+				"text": "生命周期"
+			}
+		],
+		"color": "#333",	// 文字颜色
+		"selectedColor": "#f00", // 文字选中颜色
+		"borderStyle": "black", // 上边框的颜色
+		"backgroundColor": "#fff",	// 背景颜色
+		"height": "50px",
+		"fontSize": "10px",
+		"iconWidth": "24px",
+		"spacing": "0px",
+		// 中间按钮，仅在list项为偶数时有效
+		// uni.onTabBarMidButtonTap(callback)，监听中间按钮的点击事件
+		"midButton": {
+			"width": "80px",
+			"height": "50px",
+			"text": "+",
+			"iconPath": "./imgs/tabBar/add.png",
+			"iconWidth": "24px"
+		}
+	}
+}

@@ -1,0 +1,1 @@
+"use strict";const e={};const n=require("../../common/vendor.js")._export_sfc(e,[["render",function(e,n){return{}}],["__file","D:/zhangxiaoshuai/private/uni-app/simple-frame/pages/implantH5/index.vue"]]);wx.createPage(n);

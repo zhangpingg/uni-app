@@ -1,0 +1,1 @@
+<view class="box data-v-e69c599e"><text class="data-v-e69c599e">下拉刷新、上拉加载更多</text><view class="data-v-e69c599e"><view wx:for="{{a}}" wx:for-item="item" wx:key="b" class="item data-v-e69c599e">{{item.a}}</view></view></view>

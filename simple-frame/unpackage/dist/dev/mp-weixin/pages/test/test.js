@@ -1,0 +1,1 @@
+"use strict";const e={};const t=require("../../common/vendor.js")._export_sfc(e,[["render",function(e,t){return{}}],["__file","D:/zhangxiaoshuai/private/uni-app/simple-frame/pages/test/test.vue"]]);wx.createPage(t);

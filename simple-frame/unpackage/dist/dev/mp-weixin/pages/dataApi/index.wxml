@@ -1,0 +1,1 @@
+<view><text bindtap="{{a}}">get请求</text> <view></view><text bindtap="{{b}}">post请求</text> <view></view></view>
