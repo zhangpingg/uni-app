@@ -11,26 +11,7 @@
 </template>
 
 <script setup>
-	const initList = [{
-			title: '原数据'
-		},
-		{
-			title: '原数据'
-		},
-		{
-			title: '原数据'
-		},
-		{
-			title: '原数据'
-		},
-		{
-			title: '原数据'
-		},
-		{
-			title: '原数据'
-		},
-	]
-	const list = ref(initList)
+	const list = ref([])
 	const loadMoreText = ref('加载中...')
 
 	// 初始化列表数据
