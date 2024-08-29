@@ -1,1 +1,0 @@
-<view><text bindtap="{{a}}">设置标题</text> <view></view></view>

@@ -1,1 +1,0 @@
-<view class="box data-v-e69c599e"><text class="data-v-e69c599e">下拉刷新、上拉加载更多</text><view class="uni-padding-wrap uni-common-mt data-v-e69c599e"><view wx:for="{{a}}" wx:for-item="item" wx:key="b" class="box-item data-v-e69c599e"> list-{{item.a}}</view><view class="box-loadmore data-v-e69c599e">{{b}}</view></view></view>

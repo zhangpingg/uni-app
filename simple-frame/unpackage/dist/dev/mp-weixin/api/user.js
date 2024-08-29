@@ -1,1 +1,0 @@
-"use strict";const e=require("../utils/request.js");exports.GetTireList=t=>e.service.request({url:"/api/haotian/select/tire/list",method:"post",data:t}),exports.GetTireMenu=t=>e.service.request({url:"/api/haotian/select/tire/left/menu",method:"get",data:t});
