@@ -1,0 +1,220 @@
+{
+    // 页面路由
+    "pages": [
+        {
+            "path": "pages/home/index",
+            // 设置该页面的状态栏、导航条、标题、窗口背景色等（会覆盖 globalStyle 全局样式）
+            "style": {
+                "navigationBarTitleText": "首页", // 导航栏标题文本
+                "navigationBarTextStyle": "black", // 导航栏标题文字颜色
+                "navigationBarBackgroundColor": "#F8F8F8", // 导航栏背景颜色
+                "backgroundColor": "#ccc", // 窗口的背景色（下拉刷新时，漏出来的背景色）
+                // "navigationStyle": "custom" // 原导航栏隐藏了，可以自定义
+                "enablePullDownRefresh": true // 是否开启下拉刷新
+                // "backgroundTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/test/index",
+            "style": {
+                "navigationBarTitleText": "测试",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/test/child",
+            "style": {
+                "navigationBarTitleText": ""
+            }
+        },
+        {
+            "path": "pages/builtInComponent/scrollList/index",
+            "style": {
+                "navigationBarTitleText": "无线滚动列表",
+                "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path": "pages/builtInComponent/implantH5/index",
+            "style": {
+                "navigationBarTitleText": "小程序内嵌H5页面",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/builtInComponent/phoneLogin/index",
+            "style": {
+                "navigationBarTitleText": "手机号登录",
+                "enablePullDownRefresh": true
+            }
+        },
+		{
+		    "path": "pages/builtInComponent/picker/index",
+		    "style": {
+		        "navigationBarTitleText": "picker",
+		        "enablePullDownRefresh": true
+		    }
+		},
+        {
+            "path": "pages/uniUI/uniForms/index",
+            "style": {
+                "navigationBarTitleText": ""
+            }
+        },
+        {
+            "path": "pages/uniUI/uniDataPicker/index",
+            "style": {
+                "navigationBarTitleText": "级联选择器",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/uniUI/uploadImg/index",
+            "style": {
+                "navigationBarTitleText": "上传图片",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/api/tabBar/index",
+            "style": {
+                "navigationBarTitleText": "tabBar 设置",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/api/uploadImg/index",
+            "style": {
+                "navigationBarTitleText": "上传图片",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+		    "path": "pages/api/worker/index",
+		    "style": {
+		        "navigationBarTitleText": "worder多线程",
+		        "enablePullDownRefresh": false
+		    }
+		},
+		{
+		    "path": "pages/uviewPlus/upPicker/index",
+		    "style": {
+		        "navigationBarTitleText": "up-picker",
+		        "enablePullDownRefresh": false
+		    }
+		},
+		{
+		    "path": "pages/uviewPlus/upForm/index",
+		    "style": {
+		        "navigationBarTitleText": "up-form",
+		        "enablePullDownRefresh": false
+		    }
+		},
+        {
+            "path": "pages/dataApi/index",
+            "style": {
+                "navigationBarTitleText": "调用接口",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/pinia/index",
+            "style": {
+                "navigationBarTitleText": "pinia"
+            }
+        },
+		{
+		    "path": "pages/btn/index",
+		    "style": {
+		        "navigationBarTitleText": "业务按钮"
+		    }
+		}
+    ],
+    "subPackages": [
+        {
+            "root": "pagesA",
+            "pages": [
+                {
+                    "path": "test1/index"
+                },
+                {
+                    "path": "test2/index"
+                }
+            ]
+        }
+    ],
+    // 全局：状态栏、导航条、标题、窗口背景色等
+    "globalStyle": {
+        "navigationBarTitleText": "全局-标题", // 导航栏标题文字内容
+        "navigationBarTextStyle": "black", // 导航栏标题文字颜色
+        "navigationBarBackgroundColor": "#F8F8F8", // 导航栏背景颜色
+        "backgroundColor": "#ccc", // 窗口的背景色（下拉刷新时，漏出来的背景色）
+        // 引用小程序组件
+        "usingComponents": {
+            // "collapse-tree-item": "/components/collapse-tree-item"
+        },
+        "renderingMode": "seperated", // 仅微信小程序，webrtc 无法正常时尝试强制关闭同层渲染
+        "pageOrientation": "portrait", //横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape
+        "rpxCalcMaxDeviceWidth": 960,
+        "rpxCalcBaseDeviceWidth": 375,
+        "rpxCalcIncludeWidth": 750,
+        "onReachBottomDistance": 100 // 页面上拉触底事件触发时，距页面底部距离
+    },
+    "uniIdRouter": {},
+    // 底部菜单（API：https://uniapp.dcloud.net.cn/api/ui/tabbar.html#hidetabbar）
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/home/index",
+                "text": "首页",
+                "iconPath": "./static/tabBar/home-01.png",
+                "selectedIconPath": "./static/tabBar/home-02.png"
+                // "iconfont": '' // 配置字体图标,详见文档
+            },
+            {
+                "pagePath": "pages/api/tabBar/index",
+                "text": "tabBar",
+                "iconPath": "./static/tabBar/tabBar-01.png",
+                "selectedIconPath": "./static/tabBar/tabBar-02.png"
+            }
+        ],
+        "color": "#666", // 文字颜色
+        "selectedColor": "#f60", // 文字选中颜色
+        "borderStyle": "black", // 上边框的颜色
+        "backgroundColor": "#fff", // 背景颜色
+        "height": "50px",
+        "fontSize": "10px",
+        "iconWidth": "24px",
+        "spacing": "0px"
+        // 中间按钮，仅在list项为偶数时有效
+        // uni.onTabBarMidButtonTap(callback)，监听中间按钮的点击事件
+        // "midButton": {
+        //     "width": "80px",
+        //     "height": "50px",
+        //     "text": "+",
+        //     "iconPath": "./imgs/tabBar/add.png",
+        //     "iconWidth": "24px"
+        // }
+    },
+    "easycom": {
+        "autoscan": true,
+        // 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+        "custom": {
+            "^u--(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+            "^up-(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+            "^u-([^-].*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue"
+        }
+    },
+    "condition": {
+        //模式配置，仅开发期间生效
+        "current": 2, //当前激活的模式(list 的索引项)
+        "list": [
+            {
+                "name": "", //模式名称
+                "path": "", //启动页面，必选
+                "query": "" //启动参数，在页面的onLoad函数里面得到
+            }
+        ]
+    },
+	"workers": "static/workers"
+}

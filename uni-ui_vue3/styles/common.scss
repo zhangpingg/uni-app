@@ -1,0 +1,106 @@
+// 间距
+$marPadList: ('m', 'margin'), ('p' 'padding');
+$directionList: ('t' 'top'), ('r' 'right'), ('b' 'bottom'), ('l' 'left');
+@each $typeSimple, $typeFull in $marPadList {
+    @each $dirSimple, $dirFull in $directionList {
+        @for $size from 0 through 100 {
+            .#{$typeSimple}#{$dirSimple}-#{$size} {
+                #{$typeFull}-#{$dirFull}: $size + rpx;
+            }
+        }
+    }
+}
+// 高
+@for $size from 0 through 100 {
+    .h-#{$size} {
+        height: $size + rpx;
+    }
+}
+// 行高
+@for $size from 0 through 100 {
+    .lh-#{$size} {
+        line-height: $size + rpx;
+    }
+}
+// 字体大小
+@for $size from 0 through 100 {
+    .fs-#{$size} {
+        font-size: $size + rpx;
+    }
+}
+// 溢出省略
+@for $size from 1 through 5 {
+    @if $size == 1 {
+        .ellipsis-#{$size} {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    } @else {
+        .ellipsis-#{$size} {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: $size;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+// 去除IOS底部安全区域（即动态调整底部内边距）
+// 建议：在有tabbar的页面不需要加，在非tabbar页面最好都要加上
+.safe-area {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.por {
+    position: relative;
+}
+.poa {
+    position: absolute;
+}
+.tal {
+    text-align: left;
+}
+.tac {
+    text-align: center;
+}
+.tar {
+    text-align: right;
+}
+.w-100 {
+    width: 100%;
+}
+.h-100 {
+    height: 100%;
+}
+.dn {
+    display: none;
+}
+.dib {
+    display: inline-block;
+}
+.db {
+    display: block;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-600 {
+    font-weight: 600;
+}
+.fw-700 {
+    font-weight: 700;
+}
+.c-000 {
+    color: #000;
+}
+.c-fff {
+    color: #fff;
+}
+.bg-fff {
+    background: #fff;
+}
