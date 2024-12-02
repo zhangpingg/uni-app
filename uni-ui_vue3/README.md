@@ -1,6 +1,6 @@
 ## 框架
 
-uni-ui_vue3：uniapp + 扩展组件（uni ui）+ uview-plus + vue3（成熟的框架）
+uni-ui_vue3：uniapp + 扩展组件（uni ui）+ uview-plus + vue3（1.0）
 
 ## 编辑器
 
@@ -40,3 +40,4 @@ uni-ui_vue3：uniapp + 扩展组件（uni ui）+ uview-plus + vue3（成熟的�
 16) 业务-按钮
 
 ```
+
