@@ -18,7 +18,7 @@ import { useSystemStore } from '/store/index';
 
 const systemStore = useSystemStore();
 
-// 初始化完成时触发（全局只触发一次），参数为应用启动参数
+// 小程序启动之后触发（全局只触发一次），参数为应用启动参数
 onLaunch((props) => {
     console.log('App-onLaunch-应用启动参数:', props);
     console.log('App-onLaunch-应用启动参数: ', uni.getLaunchOptionsSync());

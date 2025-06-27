@@ -132,7 +132,7 @@
     ],
     "subPackages": [
         {
-            "root": "pagesA",
+            "root": "packageA",
             "pages": [
                 {
                     "path": "test1/index"
@@ -145,7 +145,7 @@
     ],
     // 全局：状态栏、导航条、标题、窗口背景色等
     "globalStyle": {
-        "navigationBarTitleText": "全局-标题", // 导航栏标题文字内容
+        "navigationBarTitleText": "全局-标题", // 导航栏标题
         "navigationBarTextStyle": "black", // 导航栏标题文字颜色
         "navigationBarBackgroundColor": "#F8F8F8", // 导航栏背景颜色
         "backgroundColor": "#ccc", // 窗口的背景色（下拉刷新时，漏出来的背景色）
@@ -154,7 +154,7 @@
             // "collapse-tree-item": "/components/collapse-tree-item"
         },
         "renderingMode": "seperated", // 仅微信小程序，webrtc 无法正常时尝试强制关闭同层渲染
-        "pageOrientation": "portrait", //横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape
+        "pageOrientation": "portrait", // 屏幕模式：portrait-竖屏 landscape-横屏 auto-自动 (仅 APP/微信/QQ小程序)
         "rpxCalcMaxDeviceWidth": 960,
         "rpxCalcBaseDeviceWidth": 375,
         "rpxCalcIncludeWidth": 750,

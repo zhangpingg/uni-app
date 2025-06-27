@@ -31,10 +31,10 @@ const bindNow = async () => {
         try {
 			console.log('调接口');
             // const res = await apiBindGiftCard({ secretKey: secretKey.value });
-            // uni.navigateTo({ url: '/pagesA/bindGiftCard/bindSuccess' });
+            // uni.navigateTo({ url: '/packageA/bindGiftCard/bindSuccess' });
         } catch (e) {
 			console.log('调接口失败了');
-            // uni.navigateTo({ url: '/pagesA/bindGiftCard/bindFail' });
+            // uni.navigateTo({ url: '/packageA/bindGiftCard/bindFail' });
         }
     }
 };

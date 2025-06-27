@@ -21,13 +21,13 @@ const useUser = defineStore(
         const phonePlatform = ref('ios'); // 当前运行的平台类型
 		
 
-        const getSystem = () => {
+        const getSystemInfo = () => {
             const { safeArea, screenHeight, platform } = uni.getSystemInfoSync();
             isIpX.value = !(safeArea?.bottom === screenHeight);
             phonePlatform.value = platform;
         };
 
-        return { isIpX, phonePlatform, getSystem };
+        return { isIpX, phonePlatform, getSystemInfo };
     },
     {
         persist: {

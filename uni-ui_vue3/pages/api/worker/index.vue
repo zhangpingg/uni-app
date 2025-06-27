@@ -1,5 +1,5 @@
 <template>
-	<view> worker 多线程 </view>
+	<view> wx：worker 多线程</view>
 </template>
 
 <script setup>
@@ -13,8 +13,8 @@ onLoad(() => {
 		worker.terminate();
 	}
 	worker = wx.createWorker('static/workers/demoOne.js');
-	worker.postMessage('数据: 主线程=>worker线程');
-	worker.onMessage(function (res) {
+	worker.postMessage('数据1: 主线程=>worker线程'); 		// 发送数据
+	worker.onMessage(function (res) {					// 接收数据
 		console.log(res); // 数据: worker线程=>主线程
 	});
 });

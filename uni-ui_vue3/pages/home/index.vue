@@ -4,7 +4,7 @@
             <image class="h-logo mb-20 mt-20" src="/static/logo.png"></image>
         </view>
         <view class="pl-20">
-            <text class="h-link" @click="jumpGeneral('/pages/test/index')">测试</text>
+            <text class="h-link" @click="jumpGeneral('/pages/test/index')">test</text>
 
             <text class="h-link" @click="jumpGeneral('/pages/builtInComponent/scrollList/index')">
                 内置组件-无线滚动列表
@@ -26,8 +26,8 @@
             <text class="h-link" @click="jumpGeneral('/pages/api/worker/index')">Api-worker多线程</text>
             <text class="h-link" @click="jumpGeneral('/pages/uviewPlus/upPicker/index')">uview-plus up-picker（级联）</text>
             <text class="h-link" @click="jumpGeneral('/pages/uviewPlus/upForm/index')">uview-plus up-form（表单）</text>
-            <text class="h-link" @click="jumpGeneral('/pagesA/test1/index')">分包A-页面1</text>
-            <text class="h-link" @click="jumpGeneral('/pagesA/test2/index')">分包A-页面2</text>
+            <text class="h-link" @click="jumpGeneral('/packageA/test1/index')">分包A-页面1</text>
+            <text class="h-link" @click="jumpGeneral('/packageA/test2/index')">分包A-页面2</text>
             <text class="h-link" @click="jumpGeneral('/pages/dataApi/index')">接口调用</text>
             <text class="h-link" @click="jumpGeneral('/pages/pinia/index')">pinia（持久化）</text>
             <text class="h-link" @click="jumpGeneral('/pages/btn/index')">业务-按钮</text>
@@ -51,13 +51,16 @@ const jumpTab = (url) => {
     });
 };
 
-onLoad(() => {});
+onLoad(() => {
+	
+});
 // 监听-用户下拉动作，下拉刷新
 onPullDownRefresh(() => {
     setTimeout(() => {
         uni.stopPullDownRefresh();
     }, 2000);
 });
+
 </script>
 
 <style lang="scss" scoped>
