@@ -3,7 +3,7 @@
         <view class="tac">
             <image class="h-logo mb-20 mt-20" src="/static/logo.png"></image>
         </view>
-        <view class="pl-20">
+       <view class="pl-20">
             <text class="h-link" @click="jumpGeneral('/pages/test/index')">test</text>
 
             <text class="h-link" @click="jumpGeneral('/pages/builtInComponent/scrollList/index')">

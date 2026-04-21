@@ -55,6 +55,8 @@ const fn4 = async () => {
     // 注意：真机调试时，1)token手动先添加进去 2)zc-ckj网络
     const uploadTask = uni.uploadFile({
         url: 'http://10.1.13.23/test/api/quality/common/file/upload',
+        method: 'POST',
+        'content-type': 'multipart/form-data',
         header: {
             Authorization: uni.getStorageSync('token'),
         },
