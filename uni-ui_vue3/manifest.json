@@ -57,10 +57,18 @@
         "optimization" : {
             "subPackages" : true
         },
+		"requiredPrivateInfos": [
+		    "getLocation",
+		    "chooseLocation"
+		],
+		  // "requiredBackgroundModes": ["location"], // 需要小程序切到后台、手机锁屏还能持续定位
         "permission" : {
             "scope.userLocation" : {
-                "desc" : "一些描述"
-            }
+                "desc" : "授权地址：您的位置将有助于我们为您提供更好的服务"
+            },
+			"scope.getPhoneNumber": {
+			  "desc": "手机号：您的授权将有助于我们为您提供更好的服务"
+			}
         }
     },
     "vueVersion" : "3",

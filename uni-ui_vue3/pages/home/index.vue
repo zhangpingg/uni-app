@@ -22,8 +22,9 @@
             <text class="h-link" @click="jumpGeneral('/pages/uniUI/uniDataPicker/index')"> uni ui — 级联选择器 </text>
             <text class="h-link" @click="jumpGeneral('/pages/uniUI/uploadImg/index')"> uni ui — 上传图片 </text>
             <text class="h-link" @click="jumpTab('/pages/api/tabBar/index')">Api-tabBar 设置</text>
-            <text class="h-link" @click="jumpGeneral('/pages/api/uploadImg/index')">Api-上传图片</text>
+            <text class="h-link" @click="jumpGeneral('/pages/api/uploadImg/index')">Api-上传图片（推荐）</text>
             <text class="h-link" @click="jumpGeneral('/pages/api/worker/index')">Api-worker多线程</text>
+            <text class="h-link" @click="jumpGeneral('/pages/api/getLocation/index')">Api-获取地理位置（推荐）</text>
             <text class="h-link" @click="jumpGeneral('/pages/uviewPlus/upPicker/index')">uview-plus up-picker（级联）</text>
             <text class="h-link" @click="jumpGeneral('/pages/uviewPlus/upForm/index')">uview-plus up-form（表单）</text>
             <text class="h-link" @click="jumpGeneral('/packageA/test1/index')">分包A-页面1</text>

@@ -128,6 +128,12 @@
 		    "style": {
 		        "navigationBarTitleText": "业务按钮"
 		    }
+		},
+		{
+			"path": "pages/api/getLocation/index",
+			"style": {
+				"navigationBarTitleText": "获取地理位置"
+			}
 		}
     ],
     "subPackages": [
