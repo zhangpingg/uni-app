@@ -1,13 +1,16 @@
 <template>
     <view class="pl-20">
-        <button size="mini" @click="fn1">选择视频（相册/相机）</button>
+        <button size="mini" @click="fn1">选择图片/视频（相册/相机）</button>
         <button size="mini" @click="fn2">预览图片</button>
-        <button size="mini" @click="fn3">保存图片到相册</button>
+        <button size="mini" @click="fn31">保存图片到相册</button>
+        <button size="mini" @click="fn32">保存视频到相册</button>
         <button size="mini" @click="fn4">上传图片到后台</button>
 
         <view>
             单纯的展示图片：
-            <image v-for="(item, index) in imgList" :src="item.tempFilePath" :key="index" @click="fn2(index)" />
+            <view v-for="(item, index) in imgList" :key="index" @click="fn2(index)">
+                {{ item.tempFilePath }}
+            </view>
         </view>
     </view>
 </template>
@@ -21,12 +24,35 @@ const imgList = ref([]);
 const fn1 = () => {
     uni.chooseMedia({
         count: 9,
-        mediaType: ['image', 'video'], // 文件类型
+        mediaType: ['image', 'video'], // 文件类型：轻按拍照、长按拍摄视频
         sourceType: ['album', 'camera'], // 相册，相机
-        maxDuration: 30, // 拍摄视频最长拍摄时间
+        maxDuration: 8, // 拍摄视频最长拍摄时间
         camera: 'back', // 后置摄像头（默认）
         success(res) {
-            imgList.value = [...imgList.value, ...res.tempFiles];
+            if (res.type === 'video') {
+                const videoFile = res.tempFiles[0];
+                // 获取视频信息
+                uni.getVideoInfo({ src: videoFile.tempFilePath }).then((infoRes) => {
+                    if (infoRes.duration > 8) {
+                        uni.showModal({
+                            title: '提示',
+                            content: `视频时长为 ${infoRes.duration}s，超过限制的8s`,
+                            showCancel: false,
+                            confirmText: '我知道了',
+                        });
+                        return;
+                    }
+                    // 压缩视频
+                    uni.compressVideo({
+                        src: res.tempFiles[0].tempFilePath, // 视频文件路径，可以是临时文件路径也可以是永久文件路径
+                        quality: 'low', // 压缩质量
+                    }).then((res2) => {
+                        imgList.value = [...imgList.value, { ...res.tempFiles[0], tempFilePath: res2.tempFilePath }];
+                    });
+                });
+            } else if (res.type === 'image') {
+                imgList.value = [...imgList.value, ...res.tempFiles];
+            }
         },
     });
 };
@@ -42,11 +68,26 @@ const fn2 = (index) => {
     });
 };
 // 保存图片到相册
-const fn3 = () => {
+const fn31 = () => {
     uni.saveImageToPhotosAlbum({
         filePath: imgList.value[0].tempFilePath,
         success: function () {
             console.log('保存到相册成功');
+        },
+        fail: (err) => {
+            console.log('err', err);
+        },
+    });
+};
+// 保存视频到相册
+const fn32 = () => {
+    uni.saveVideoToPhotosAlbum({
+        filePath: imgList.value[0].tempFilePath,
+        success: function () {
+            console.log('保存到相册成功');
+        },
+        fail: (err) => {
+            console.log('err', err);
         },
     });
 };
