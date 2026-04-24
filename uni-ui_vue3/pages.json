@@ -22,12 +22,6 @@
             }
         },
         {
-            "path": "pages/test/child",
-            "style": {
-                "navigationBarTitleText": ""
-            }
-        },
-        {
             "path": "pages/builtInComponent/scrollList/index",
             "style": {
                 "navigationBarTitleText": "无线滚动列表",
