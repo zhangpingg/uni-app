@@ -28,6 +28,7 @@
             <view class="select-tire__content">
                 <view class="select-tire__bg">
                     <view class="select-tire__tip">请选择需要理赔轮胎的轮位</view>
+                    <!-- 这个是旧写法，建议改为新写法type='2D' -->
                     <canvas canvas-id="myCanvas" id="myCanvas" class="canvas" @touchstart="onClickCanvas" />
                 </view>
             </view>
