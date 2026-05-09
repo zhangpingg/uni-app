@@ -32,6 +32,7 @@
             <text class="h-link" @click="jumpGeneral('/pages/dataApi/index')">接口调用</text>
             <text class="h-link" @click="jumpGeneral('/pages/pinia/index')">pinia（持久化）</text>
             <text class="h-link" @click="jumpGeneral('/pages/btn/index')">业务-按钮</text>
+            <text class="h-link" @click="jumpGeneral('/pages/selectTirePosition/index')">选择轮位</text>
         </view>
     </view>
 </template>
