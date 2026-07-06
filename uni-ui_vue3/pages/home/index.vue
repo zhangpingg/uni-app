@@ -18,6 +18,9 @@
 			<text class="h-link" @click="jumpGeneral('/pages/builtInComponent/picker/index')">
 			    内置组件-picker
 			</text>
+			<text class="h-link" @click="jumpGeneral('/pages/builtInComponent/headImgnAndNickname/index')">
+			    内置组件-头像和昵称
+			</text>
             <text class="h-link" @click="jumpGeneral('/pages/uniUI/uniForms/index')">uni ui — 表单</text>
             <text class="h-link" @click="jumpGeneral('/pages/uniUI/uniDataPicker/index')"> uni ui — 级联选择器 </text>
             <text class="h-link" @click="jumpGeneral('/pages/uniUI/uploadImg/index')"> uni ui — 上传图片 </text>
