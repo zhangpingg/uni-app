@@ -47,9 +47,9 @@
     },
     /* SDK配置 */
     "quickapp" : {},
-    /* 微信小程序-特有配置 */
+    /* 微信小程序-特有配置（OE：wxe182fc1bf10e507e、个人：wx01f12efcea0404dd） */
     "mp-weixin" : {
-        "appid" : "wxe182fc1bf10e507e",
+        "appid" : "wx01f12efcea0404dd",
         "setting" : {
             "urlCheck" : false
         },
