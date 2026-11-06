@@ -1,3 +1,12 @@
+// 上传的命令：（全部一次性粘贴进 PowerShell 终端）
+// $env:WX_APPID="wx01f12efcea0404dd"    // 个人小程序：张小帅呆
+// // 设置上传密钥路径(不能提交到git)
+// $env:WX_PRIVATE_KEY_PATH="E:\zhangxiaoshuai\private.wx01f12efcea0404dd.key"
+// $env:WX_VERSION="1.0.1"
+// $env:WX_DESC="首页开发"
+// $env:WX_CI_PROXY = "http://127.0.0.1:7897"  // 7897：是Clash Verge的代理端口
+// node scripts/upload-miniprogram.js
+
 const fs = require('fs');
 const path = require('path');
 const ci = require('miniprogram-ci');
